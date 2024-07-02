@@ -4,7 +4,7 @@
             separator="has-succeeds-separator"
         >
             <b-breadcrumb-item href="/">Users</b-breadcrumb-item>
-            <b-breadcrumb-item :active="$route.params.id">{{userDetails.username}}</b-breadcrumb-item>
+            <b-breadcrumb-item :active="$route.params.id">{{userDetails.name}}</b-breadcrumb-item>
         </b-breadcrumb>
         <div v-if="userDetails" class="flex flex-col md:flex-row gap-4 my-4">
       <section class="border-primary border bg-[#EEEEF9]  p-4 rounded-lg shadow-md flex-1">
@@ -38,7 +38,7 @@
     </div>
       <div v-if="userPosts.length">
         <section>
-          <div class="text-center mb-2"><h2 class="text-2xl font-bold my-4 border-b-2 pb-1 border-primary text-center inline-block"><span class="text-dark-font-color">Posts by</span> <span class="text-primary">{{userDetails.username}}</span></h2></div>
+          <div class="text-center mb-2"><h2 class="text-2xl font-bold my-4 border-b-2 pb-1 border-primary text-center inline-block"><span class="text-dark-font-color">Posts by</span> <span class="text-primary">{{userDetails.name}}</span></h2></div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div v-for="post in userPosts" :key="post.id" class="post-card">
               <div class="text-xl text-dark-font-color font-bold">{{ post.title }}</div>
